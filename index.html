@@ -6,8 +6,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo-app</title>
   <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-  <div class="image-bg"></div>
+  <div class="bg-image"  alt="imagem de fundo"></div>
+  
+  <main class="card-container">
+    <header>
+      <div class="title">
+        <h1>TODO</h1>
+        <a class="btn-switch-theme" href="#">
+          <img src="./images/icon-sun.svg" alt="mudar tema">
+        </a>
+      </div>
+
+      <div class="input input">
+        <div class="round">
+          <input class="checkbox" type="checkbox" id="checkbox">
+          <label for="checkbox" class="checkmark"></label>
+        </div>
+        <input type="text" placeholder="Adicionar uma nova tarefa">
+      </div>
+
+    </header>
+
+    <section class="body-card">
+
+      <div class="list">
+
+        <div class="input tarefa">
+          <div class="round">
+            <input class="checkbox" type="checkbox" id="checkbox-1">
+            <label for="checkbox-1" class="checkmark"></label>
+          </div>
+          <span>tarefa adicionada</span>
+
+          <img class="delete" src="./images/icon-cross.svg" alt="" srcset="">
+        </div>
+
+        <div class="input tarefa">
+          <div class="round">
+            <input class="checkbox" type="checkbox" id="checkbox-1">
+            <label for="checkbox-1" class="checkmark"></label>
+          </div>
+          <span>tarefa adicionada</span>
+
+          <img class="delete" src="./images/icon-cross.svg" alt="" srcset="">
+        </div>    
+
+      </div>
+
+      
+      <footer class="card-footer">
+        <span class="items">5 tarefas</span>
+
+        <div class="filtro">
+          <span class="click active">Todas</span>
+          <span class="click">Ativas</span>
+          <span class="click">Completadas</span>
+        </div>
+
+        <span class="click">
+          Limpar completadas
+        </span>
+      </footer>
+    </section>
+
+    <div class="footer-mobile">
+      <div class="filtro">
+        <span class="click active">Todas</span>
+        <span class="click">Ativas</span>
+        <span class="click">Completadas</span>
+      </div>
+    </div>
+  </main>
+
 </body>
 </html>

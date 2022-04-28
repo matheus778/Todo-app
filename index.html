@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-  <div class="bg-image"  alt="imagem de fundo"></div>
+  <div id="bg-image" class="bg-image"  alt="imagem de fundo"></div>
   
   <main class="card-container">
     <header>
       <div class="title">
         <h1>TODO</h1>
         <a class="btn-switch-theme" href="#">
-          <img src="./images/icon-sun.svg" alt="mudar tema">
+          <img id="btn-theme" src="./images/icon-sun.svg" alt="mudar tema">
         </a>
       </div>
 
@@ -58,7 +58,7 @@
 
       
       <footer class="card-footer">
-        <span class="items">5 tarefas</span>
+        <span class="items">0 tarefas</span>
 
         <div class="filtro">
           <span class="click active">Todas</span>
@@ -81,5 +81,6 @@
     </div>
   </main>
 
+  <script src="./js/switch-theme.js"></script>
 </body>
 </html>

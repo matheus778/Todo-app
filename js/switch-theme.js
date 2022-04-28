@@ -1,74 +1,61 @@
 // troca de tema dark - light
 const btnThemeSwitch = document.querySelector('#btn-theme');
-const body = document.querySelector('body');
+const html = document.querySelector('html');
 const bgImageTheme = document.querySelector('#bg-image');
 
-const dark = [
-  ['--light', 'hsl(0, 0%, 98%)'],
-  ['--dark-bg', 'hsl(235, 21%, 11%)'],
-  ['--dark-desaturated', 'hsl(235, 24%, 19%)'],
-  [' --blue', 'hsl(234, 11%, 52%)'],
-  ['--border-bottom', '1px solid rgba(255, 255, 255, 0.205)'],
-  [{bgImage: "url('../images/bg-desktop-dark.jpg')" , theme:'dark'}]
-]
+const themes = {
+  light: {
+    text: 'hsl(235, 21%, 11%)',
+    borderColorItems: '1px solid rgba(24, 23, 23, 0.205)',
+    backgroundCard: 'hsl(0, 0%, 98%)',
+    background: 'hsl(236, 33%, 92%)',
+    textSmall: 'hsl(234, 11%, 52%)',
+    bgImage: "url('../images/bg-desktop-light.jpg')",
+    iconTheme: './images/icon-moon.svg'
+  },
 
-const light = [
-  ['--light', 'hsl(235, 21%, 11%)'],
-  ['--dark-bg', 'hsl(236, 33%, 92%)'],
-  ['--dark-desaturated', 'hsl(0, 0%, 98%)'],
-  [' --blue', 'hsl(234, 11%, 52%)'],
-  ['--border-bottom', '1px solid rgba(24, 23, 23, 0.205)'],
-  [{bgImage: "url('../images/bg-desktop-light.jpg')", theme:'light'}]
-]
-
-
-btnThemeSwitch.addEventListener('click', ()=>{
-  let currentTheme = localStorage.getItem('theme');
-
-  if(currentTheme === null || currentTheme === undefined){
-    swithTheme(light)
+  dark: {
+    text: 'hsl(0, 0%, 98%)',
+    borderColorItems: '1px solid rgba(255, 255, 255, 0.205)',
+    backgroundCard: 'hsl(235, 24%, 19%)',
+    background: 'hsl(235, 21%, 11%)',
+    textSmall: 'hsl(234, 11%, 52%)',
+    bgImage: "url('../images/bg-desktop-dark.jpg')",
+    iconTheme: './images/icon-sun.svg'
   }
+}
 
-  if(currentTheme == 'dark'){
-    swithTheme(light)
-  }
+const themeSave = localStorage.getItem('theme');
+if(themeSave){
+  setTheme(themeSave);
+}
 
-  if(currentTheme == 'light'){
-    swithTheme(dark)
-  }
-})
+if(!themeSave){
+  setTheme('dark');
+}
 
-window.addEventListener('load', ()=>{
-  let currentTheme = localStorage.getItem('theme');
-  if(currentTheme == ' dark'){
-    swithTheme(dark)
-  }
+function setTheme(newTheme){
+  const themeColors = themes[newTheme];
 
-  if(currentTheme == 'light'){
-    swithTheme(light)
-  }
-})
-
-
-function swithTheme(theme){
-  // altera os valores das variaveis CSS 
-  theme.forEach((el)=>{
-    body.style.setProperty(el[0], el[1])
-
-    // altera a imagem de fundo e o icone de acordo com a troca de tema 
-    if(typeof(el[0]) == "object") {
-      bgImageTheme.style.setProperty('background-image', el[0].bgImage);
-      
-      if(el[0].theme == 'dark'){
-        btnThemeSwitch.setAttribute('src', './images/icon-sun.svg')
-        localStorage.setItem('theme', 'dark');
-
-      }
-      else{
-        btnThemeSwitch.setAttribute('src', './images/icon-moon.svg')
-        localStorage.setItem('theme', 'light');
-      }
-    }
+  Object.keys(themeColors).map(key=>{
+    html.style.setProperty(`--${key}`,` ${themeColors[key]}`);
   })
 
+  bgImageTheme.style.setProperty('background-image', `${themeColors.bgImage}`);
+  btnThemeSwitch.setAttribute('src', themeColors.iconTheme);
+  localStorage.setItem('theme', newTheme);
 }
+
+
+btnThemeSwitch.addEventListener('click',()=> {
+  let themeSave = localStorage.getItem('theme');
+
+  if(themeSave == 'light'){
+    setTheme('dark');
+    
+  }
+
+  if(themeSave == 'dark'){
+    setTheme('light');
+  }
+})

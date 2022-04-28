@@ -4,9 +4,8 @@
   position: absolute;
   top: 0;
   z-index: -1;
-
-  background-size: cover;
   background-image: url('../images/bg-desktop-dark.jpg');
+  background-size: cover;
 }
 
 .card-container{
@@ -40,7 +39,6 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 9px 2px 13px -1px rgba(0,0,0,0.2);
 }
 
 .input input[type="text"]{
@@ -62,7 +60,7 @@
 
 .round label {
   background-color: rgba(255, 255, 255, 0.164);
-  border: 1px solid rgba(204, 204, 204, 0.116);
+  border: 1px solid rgba(94, 92, 92, 0.795);
   border-radius: 50%;
   cursor: pointer;
   height: 28px;
@@ -111,7 +109,7 @@
   justify-content: start;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.205);
+  border-bottom: var(--border-bottom);
   border-radius: 0;
 }
 

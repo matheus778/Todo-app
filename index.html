@@ -20,13 +20,13 @@
         </a>
       </div>
 
-      <div class="input input">
+      <form class="input" name="newTask" target="#'">
         <div class="round">
           <input class="checkbox" type="checkbox" id="checkbox">
           <label for="checkbox" class="checkmark"></label>
         </div>
-        <input type="text" placeholder="Adicionar uma nova tarefa">
-      </div>
+        <input name="task" autocomplete="off" type="text" placeholder="Adicionar uma nova tarefa">
+      </form>
 
     </header>
 
@@ -34,7 +34,7 @@
 
       <div class="list">
 
-        <div class="input tarefa">
+       <!-- <div class="input tarefa">
           <div class="round">
             <input class="checkbox" type="checkbox" id="checkbox-1">
             <label for="checkbox-1" class="checkmark"></label>
@@ -42,17 +42,7 @@
           <span>tarefa adicionada</span>
 
           <img class="delete" src="./images/icon-cross.svg" alt="" srcset="">
-        </div>
-
-        <div class="input tarefa">
-          <div class="round">
-            <input class="checkbox" type="checkbox" id="checkbox-1">
-            <label for="checkbox-1" class="checkmark"></label>
-          </div>
-          <span>tarefa adicionada</span>
-
-          <img class="delete" src="./images/icon-cross.svg" alt="" srcset="">
-        </div>    
+        </div> -->
 
       </div>
 
@@ -82,5 +72,6 @@
   </main>
 
   <script src="./js/switch-theme.js"></script>
+  <script src="./js/addTask.js"></script>
 </body>
 </html>

@@ -37,13 +37,14 @@
 ![Captura de tela de 2022-04-29 23-38-45](https://user-images.githubusercontent.com/57428641/166087270-11e6206c-7b35-4ecb-a5ef-3ccd1da1b81c.png)
 <br>
 <br>
-![](https://im5.ezgif.com/tmp/ezgif-5-a5785cf037.gif)
+![1](https://user-images.githubusercontent.com/57428641/166107679-12ddc19a-c4e1-4820-b023-d30edf43bb2d.gif)
 <br>
 <br>
-![](https://im5.ezgif.com/tmp/ezgif-5-482e0d41fd.gif)
+![3](https://user-images.githubusercontent.com/57428641/166107692-4d348304-3a0a-4152-acf1-a8afec3912e9.gif)
 <br>
 <br>
-![](https://im5.ezgif.com/tmp/ezgif-5-d3d646402e.gif)
+![2](https://user-images.githubusercontent.com/57428641/166107694-fb77bc03-7bb9-410f-8a7d-a621c27211c5.gif)
+
 ### Autor
 ---
 

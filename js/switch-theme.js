@@ -10,8 +10,8 @@ const themes = {
     backgroundCard: 'hsl(0, 0%, 98%)',
     background: 'hsl(236, 33%, 92%)',
     textSmall: 'hsl(234, 11%, 52%)',
-    bgImage: "url('../images/bg-desktop-light.jpg')",
-    iconTheme: '../images/icon-moon.svg'
+    bgImage: "url('./images/bg-desktop-light.jpg')",
+    iconTheme: './images/icon-moon.svg'
   },
 
   dark: {
@@ -20,7 +20,7 @@ const themes = {
     backgroundCard: 'hsl(235, 24%, 19%)',
     background: 'hsl(235, 21%, 11%)',
     textSmall: 'hsl(234, 11%, 52%)',
-    bgImage: "url('../images/bg-desktop-dark.jpg')",
+    bgImage: "url('./images/bg-desktop-dark.jpg')",
     iconTheme: './images/icon-sun.svg'
   }
 }

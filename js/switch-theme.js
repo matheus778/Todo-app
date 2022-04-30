@@ -11,7 +11,7 @@ const themes = {
     background: 'hsl(236, 33%, 92%)',
     textSmall: 'hsl(234, 11%, 52%)',
     bgImage: "url('../images/bg-desktop-light.jpg')",
-    iconTheme: './images/icon-moon.svg'
+    iconTheme: '../images/icon-moon.svg'
   },
 
   dark: {

@@ -51,6 +51,21 @@
   outline: none;
 }
 
+form:invalid{
+  animation: 300ms shake;
+}
+
+@keyframes shake{
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+
+#checkbox + label{
+  opacity: 0.2;
+}
+
 .round {
   width: 10%;
   display: flex;

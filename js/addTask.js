@@ -1,13 +1,26 @@
 const form = document.forms.newTask;
 let listHtml = document.querySelector('.list');
+let taskCountEl  = document.querySelector('#task-count');
 
 let tasksArray = []
+let taskCount ;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const { task } = form;
   
+  //validações
+
+  if(task.value == ''){
+    toast('não é possivel criar uma tarefa em branco',"#d9534f");
+    return;
+  }
+
+  if(task.value.length < 8){
+    toast('a tarefa deve ter no minimo 8 caracteres',"#d9534f");
+    return
+  }
 
   let newTask = {
     id: tasksArray.length,
@@ -21,13 +34,29 @@ form.addEventListener('submit', (e) => {
 
   createCardTask(newTask);
   saveTaskInStorage(tasksArray)
+  toast('tarefa adicionada', '#5cb85c');
 })
+
+function toast( msg, color ){
+  Toastify({
+    text: msg,
+    duration: 2000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: color,
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
+}
 
 function createCardTask(newTask){
   let taskHtml =`
   <div class="input tarefa tarefa-${newTask.id} ${newTask.completed? 'completed': ''}">
     <div class="round">
-      <input class="checkbox" type="checkbox" onchange="(checkedTask(${newTask.id}))" id="checkbox-${newTask.id}">
+      <input class="checkbox" ${newTask.completed ? 'checked': ''} type="checkbox" onchange="(checkedTask(${newTask.id}))" id="checkbox-${newTask.id}">
       <label for="checkbox-${newTask.id}" class="checkmark"></label>
     </div>
     <span>${newTask.title}</span>
@@ -35,6 +64,9 @@ function createCardTask(newTask){
   </div>`
  
   listHtml.innerHTML += taskHtml;
+
+  saveTaskInStorage(tasksArray)
+  recoveryTaskInStorage();
 }
 
 function checkedTask(id){
@@ -60,6 +92,8 @@ function deleteTask(id){
   tasksArray.map((el) => {
     createCardTask(el);
   });
+
+  recoveryTaskInStorage();
 }
 
 function saveTaskInStorage(tasksArray){
@@ -71,6 +105,13 @@ function recoveryTaskInStorage(){
   let taskSaved = localStorage.getItem('tasks');
   let json = JSON.parse(taskSaved);
 
+  if(json.length != 0){
+    taskCount = json.length
+  }
+  else{
+    taskCount = 0;
+  }
+  taskCountEl.innerText = `${taskCount} tarefa${taskCount == 0 || taskCount > 1 ? 's': ''}`;
   return json;
 }
 
